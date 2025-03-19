@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Classroom</h1>
+  <ul>
+    {% for classroom in classrooms %}
+      <li>{{ classroom.name }} - {{ classroom.created_at|date:"d/m/Y" }}</li>
+    {% empty %}
+      <li>No classrooms available.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
